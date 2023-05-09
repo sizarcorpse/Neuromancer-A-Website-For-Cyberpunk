@@ -1,5 +1,6 @@
 import {
   NrButton,
+  NrImageSlider,
   NrLinkButton,
   NrList,
   NrText,
@@ -63,7 +64,7 @@ const NrEventCard = ({ item }: { item: EventCardProps }) => {
       }
       ${
         preset === "vr" &&
-        "max-w-sm rounded-t-lg bg-event-vr-gradient  p-lg flex flex-col gap-md sm:p-xl sm:gap-l"
+        "max-w-sm rounded-t-lg bg-event-vr-gradient p-lg flex flex-col gap-md sm:p-xl sm:gap-lg"
       }
       ${
         preset === "game" &&
@@ -71,21 +72,23 @@ const NrEventCard = ({ item }: { item: EventCardProps }) => {
       }
       `}
     >
-      <Image
+      {/* <Image
         src={images[0].src}
         alt={images[0].alt}
-        width={336}
-        height={236}
+        width="0"
+        height="0"
+        sizes="100vw"
+        style={{ width: "100%", height: "100%" }}
+        priority={true}
         className={`
         bg-cover
-        ${preset === "social" && "rounded-t-lg"}
-        ${preset === "vr" && "rounded-t-lg"}
-        ${preset === "game" && "rounded-t-lg"}
         ${
-          preset === "corporate" &&
-          "rounded-t-lg w-full max-w-[720px] max-h-[291px] lg:rounded-none lg:rounded-l-lg md:max-w-[420px]"
+          preset === "corporate"
+            ? "rounded-t-lg w-full max-h-[291px] lg:rounded-none lg:rounded-l-lg md:max-w-[420px]"
+            : "rounded-t-lg"
         }`}
-      />
+      /> */}
+      <NrImageSlider item={images} styles={{ preset }} />
       <div
         className={`${preset === "social" && "flex flex-col gap-lg"}
         ${preset === "corporate" && "flex flex-col gap-lg p-xl"}
