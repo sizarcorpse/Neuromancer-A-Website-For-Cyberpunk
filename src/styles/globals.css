@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif;
+  }
+  h1 {
+    @apply text-3xl font-bold my-3  sm:text-4xl lg:text-5xl lg:font-extrabold;
+  }
+  h2 {
+    @apply text-2xl font-bold my-3 lg:text-3xl;
+  }
+  h3 {
+    @apply text-xl font-bold;
+  }
+  p {
+    @apply text-base;
+  }
+}
