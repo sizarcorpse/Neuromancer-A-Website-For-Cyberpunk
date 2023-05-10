@@ -1,4 +1,5 @@
 export { default as NrButton } from "./NrButton";
+export { default as NrContainer } from "./NrContainer";
 export { default as NrDjCard } from "./NrDjCard";
 export { default as NrEventCard } from "./NrEventCard";
 export { default as NrImageSlider } from "./NrImageSlider";
