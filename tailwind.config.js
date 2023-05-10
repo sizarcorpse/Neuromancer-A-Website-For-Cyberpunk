@@ -18,6 +18,11 @@ module.exports = {
         rose: "#f43f5e",
         "rose-light": "#ffe4e6",
       },
+      container: {
+        padding: {
+          DEFAULT: "1rem",
+        },
+      },
       padding: {
         none: "0px",
         xs: "2px",
