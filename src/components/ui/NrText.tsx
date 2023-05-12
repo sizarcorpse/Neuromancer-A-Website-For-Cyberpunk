@@ -2,20 +2,21 @@ type NrTextProps = {
   children: React.ReactNode;
   styles?: {
     align?: "left" | "center" | "right" | "justify";
-    color?: "light" | "dark";
-    size?: "sm";
+    color?: "light" | "dark" | "rose" | "amber" | "gray";
+    size?: "xs" | "sm";
+    css?: string;
   };
 };
 
 const NrText: React.FC<NrTextProps> = ({ children, styles }) => {
-  const { align, color, size } = styles ?? {};
+  const { align, color, size, css } = styles ?? {};
   return (
     <p
       className={`
-        ${color === "dark" ? "text-darker" : "text-light"}
+        ${color ? `text-${color}` : "text-white"}
         ${align ? `text-${align}` : "text-left"}
-        ${size && `text-${size}`}
-  `}
+        ${size ? `text-${size}` : "text-base"}
+        ${css ? `${css}` : ""}`}
     >
       {children}
     </p>
