@@ -1,30 +1,12 @@
 "use client";
 import { NrLinkButton, NrSocialCard, NrText, NrTitle } from "@/components/ui";
+import { DropdownExplore } from "@/types/dropdown";
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { Fragment } from "react";
 import { GiDeerHead } from "react-icons/gi";
 
-type NrDropdownProps = {
-  exploreData: {
-    title: string;
-    description?: string;
-    image?: string;
-    href?: string;
-  }[];
-  socialData?: {
-    facebook?: string;
-    instagram?: string;
-    twitter?: string;
-    soundcloud?: string;
-  };
-  actionLink?: string;
-  styles?: {
-    footer?: boolean;
-  };
-};
-
-const NrDropdown: React.FC<NrDropdownProps> = ({
+const NrDropdown: React.FC<DropdownExplore> = ({
   exploreData,
   socialData,
   actionLink,
@@ -53,10 +35,10 @@ const NrDropdown: React.FC<NrDropdownProps> = ({
             {exploreData.map((item, index) => (
               <Menu.Item key={index}>
                 <div className="group flex flex-row rounded-md cursor-pointer p-2 gap-4 transition-colors duration-200 hover:bg-light">
-                  {item.image && (
+                  {item.icon && (
                     <div className="grow shrink basis-16 h-16 flex items-center justify-center bg-blue-gray rounded-md">
                       <Image
-                        src={item.image}
+                        src={item.icon}
                         alt={item.title}
                         width={64}
                         height={64}
