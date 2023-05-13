@@ -1,12 +1,13 @@
 import {
   NrButton,
+  NrComponentSlider,
   NrContainer,
   NrEventCard,
   NrText,
   NrTitle,
 } from "@/components/ui";
 import { exploreData } from "@/mock/data";
-import { NrEvent } from "@/types/event";
+import { NrEvent, NrEvents } from "@/types/event";
 
 const HomeExplore = () => {
   return (
@@ -36,7 +37,7 @@ const HomeExplore = () => {
             quality time with loved ones.
           </NrText>
         </div>
-        <div className="max-w-screen-xl m-auto flex flex-col flex-wrap justify-center items-stretch gap-6 md:flex-row">
+        <div className="hidden max-w-screen-xl m-auto md:flex flex-col flex-wrap justify-center items-stretch gap-6 md:flex-row">
           {exploreData.map((item, index) => (
             <div
               key={index}
@@ -45,6 +46,12 @@ const HomeExplore = () => {
               <NrEventCard item={item as NrEvent} />
             </div>
           ))}
+        </div>
+        <div className="block w-full max-w-sm md:hidden">
+          <NrComponentSlider
+            item={exploreData as NrEvents}
+            component="NrEventCard"
+          />
         </div>
         <NrButton
           styles={{
