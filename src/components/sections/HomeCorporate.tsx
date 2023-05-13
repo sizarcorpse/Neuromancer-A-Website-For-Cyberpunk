@@ -1,12 +1,13 @@
 import {
   NrButton,
+  NrComponentSlider,
   NrContainer,
   NrEventCard,
   NrText,
   NrTitle,
 } from "@/components/ui";
 import { corporateData } from "@/mock/data";
-import { NrEvent } from "@/types/event";
+import { NrEvent, NrEvents } from "@/types/event";
 
 const HomeCorporate = () => {
   return (
@@ -36,12 +37,18 @@ const HomeCorporate = () => {
             through engaging gameplay.
           </NrText>
         </div>
-        <div className="flex flex-col items-center justify-center gap-10 md:flex-row lg:flex-col">
+        <div className="hidden md:flex flex-col items-center justify-center gap-10 md:flex-row lg:flex-col">
           {corporateData.map((item, index) => (
             <div key={index}>
               <NrEventCard item={item as NrEvent} />
             </div>
           ))}
+        </div>
+        <div className="block w-full max-w-sm md:hidden">
+          <NrComponentSlider
+            item={corporateData as NrEvents}
+            component="NrEventCard"
+          />
         </div>
       </NrContainer>
     </section>
