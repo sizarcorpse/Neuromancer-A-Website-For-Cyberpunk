@@ -5,6 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: ["text-gray"],
   theme: {
     extend: {
       colors: {
@@ -14,11 +15,15 @@ module.exports = {
         dark: "#18181b",
         darker: "#09090b",
         amber: "#fbbf24",
-        "amber-light": "#fef3c7",
         rose: "#f43f5e",
+        gray: "#a1a1aa",
+        "amber-light": "#fef3c7",
         "rose-light": "#ffe4e6",
+        "blue-dark": "#0f172a",
+        "blue-gray": "#1e293b",
       },
       container: {
+        center: true,
         padding: {
           DEFAULT: "1rem",
         },
@@ -57,16 +62,35 @@ module.exports = {
       flexBasis: {
         "column-2-gap-2": "calc(100% / 2 - 8px)",
         "column-3-gap-2": "calc(100% / 3 - 8px)",
+        "column-2-gap-4": "calc(100% / 2 - 16px)",
+        "column-3-gap-4": "calc(100% / 3 - 16px)",
       },
       backgroundImage: {
         "button-gradient":
           "linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%)",
         "event-vr-gradient":
           "linear-gradient(206.78deg, #FFCE31 2.92%, #B46B4D 26.52%, #670569 77.4%)",
+        "home-hero-bgi":
+          "linear-gradient(0deg, rgba(15,23,42,1) 0%, rgba(9,9,121,0) 50%), url('/assets/images/bg-p.svg'),url('/assets/images/home-hero.jpg')",
+        "home-explore-bgi":
+          "url('/assets/images/bg-p.png'), linear-gradient(180deg, rgba(15,23,42,1) 50%, rgba(9,9,11,1) 100%)",
+        "home-corporate-bgi":
+          "radial-gradient(#0b0d14 2px, #00000000 2px), linear-gradient(180deg, rgba(9,9,11,1) 50%, rgba(15,23,42,1) 100%)",
+      },
+      backgroundPosition: {
+        "home-hero-bgp": "bottom center, center, center",
+      },
+      backgroundSize: {
+        "home-hero-bgs": "100% 30%, cover, cover",
+        "home-corporate-bgs": "40px 40px, cover",
       },
       boxShadow: {
         "button-shadow":
           "rgba(0, 0, 0, 0.3) 0px 2px 4px, rgba(245, 158, 11, 0.2) 0px 7px 13px -3px, rgba(245, 158, 11, 0.15) 0px -3px 0px inset;",
+
+        "dropdown-shadow": "rgba(0, 0, 0, 0.45) 0px 25px 20px -20px",
+        "event-vr-shadow":
+          "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;",
       },
     },
   },
