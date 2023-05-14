@@ -84,7 +84,8 @@ const NrImageSlider: React.FC<NrImageSliderProps> = ({ item, styles }) => {
   }, [emblaApi, , onSelect]);
 
   return (
-    <div className="embla h-full relative">
+    // h-full
+    <div className="embla h-auto relative">
       <div
         className={`embla__viewport overflow-hidden w-auto h-full ${
           preset === "corporate"

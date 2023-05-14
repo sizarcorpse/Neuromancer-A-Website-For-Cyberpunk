@@ -17,6 +17,9 @@ type NrSocialCardProps = {
     soundcloud?: string;
     twitter?: string;
   };
+  styles?: {
+    size?: string;
+  };
 };
 
 const socialIcon = [
@@ -42,7 +45,8 @@ const socialIcon = [
   },
 ];
 
-const NrSocialCard: React.FC<NrSocialCardProps> = ({ item }) => {
+const NrSocialCard: React.FC<NrSocialCardProps> = ({ item, styles }) => {
+  const { size } = styles || {};
   return (
     <div className="flex flex-row gap-md items-center justify-center">
       {Object.keys(item).map((key: string, index) => (
@@ -54,9 +58,9 @@ const NrSocialCard: React.FC<NrSocialCardProps> = ({ item }) => {
           className="group rounded-full p-sm "
         >
           {cloneElement(socialIcon[index].icon, {
-            size: "1em",
-            className:
-              "text-rose scale-100 group-hover:scale-150 transition-all duration-300",
+            className: `${
+              size ? `text-${size}` : "text-base"
+            } text-rose scale-100 group-hover:scale-150 transition-all duration-300`,
           })}
         </Link>
       ))}

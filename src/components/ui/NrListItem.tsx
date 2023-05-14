@@ -40,9 +40,9 @@ const NrListItem = ({ children, style }: NrListItemProps) => {
           <MdOutlineCircle size={"1em"} className="text-rose" />
         )}
         <p
-          className={`${color === "dark" ? "text-darker" : "text-light"} ${
-            fontSize === "xs" ? "text-xs" : "text-sm"
-          }`}
+          className={`whitespace-nowrap overflow-hidden text-ellipsis max-w-[100%] hover:bg-black ${
+            color === "dark" ? "text-darker" : "text-light"
+          } ${fontSize === "xs" ? "text-xs" : "text-sm"}`}
         >
           {children}
         </p>

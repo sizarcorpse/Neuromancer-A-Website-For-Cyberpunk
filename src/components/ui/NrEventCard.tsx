@@ -6,32 +6,9 @@ import {
   NrText,
   NrTitle,
 } from "@/components/ui";
-import Image from "next/image";
+import { NrEvent } from "@/types/event";
 import React from "react";
 import { MdShare } from "react-icons/md";
-
-type EventCardProps = {
-  preset: "social" | "corporate" | "vr" | "game";
-  images: {
-    src: string;
-    alt: string;
-  }[];
-  title: string;
-  status?: "Coming Soon" | "Live" | "Ended" | "Cancelled";
-  descriptions: string;
-  featured?: {
-    icon: string;
-    title: string;
-  }[];
-  action?: {
-    type: "link" | "button";
-    label: string;
-    href: string;
-  };
-  share?: {
-    enabled: boolean;
-  };
-};
 
 const NrShareButton = () => {
   return (
@@ -41,34 +18,34 @@ const NrShareButton = () => {
   );
 };
 
-const NrEventCard = ({ item }: { item: EventCardProps }) => {
+const NrEventCard = ({ item }: { item: NrEvent }) => {
   const {
     preset,
-    images,
+    galleries,
     title,
     status,
-    descriptions,
-    featured,
+    description,
+    features,
     share,
     action,
   } = item;
   return (
     <article
-      className={`${
+      className={`_ev_ dropdown-shadow h-full ${
         preset === "social" &&
-        "max-w-sm rounded-t-lg bg-dark p-lg flex flex-col gap-md sm:p-xl sm:gap-lg"
+        "w-full max-w-sm rounded-t-lg bg-dark p-lg flex flex-col gap-md sm:p-xl sm:gap-lg"
       }
       ${
         preset === "corporate" &&
-        "max-w-sm rounded-lg bg-dark flex flex-col lg:max-w-5xl lg:flex-row"
+        "w-full max-w-sm rounded-lg bg-dark flex flex-col lg:max-w-5xl lg:flex-row"
       }
       ${
         preset === "vr" &&
-        "max-w-sm rounded-t-lg bg-event-vr-gradient p-lg flex flex-col gap-md sm:p-xl sm:gap-lg"
+        "w-full max-w-sm rounded-lg bg-event-vr-gradient p-lg flex flex-col gap-lg sm:p-xl md:max-w-md"
       }
       ${
         preset === "game" &&
-        "max-w-sm rounded-none bg-dark p-lg flex flex-col gap-md sm:p-xl sm:gap-lg"
+        "w-full max-w-sm rounded-none bg-dark p-lg flex flex-col gap-md sm:p-xl sm:gap-lg"
       }
       `}
     >
@@ -88,9 +65,9 @@ const NrEventCard = ({ item }: { item: EventCardProps }) => {
             : "rounded-t-lg"
         }`}
       /> */}
-      <NrImageSlider item={images} styles={{ preset }} />
+      <NrImageSlider item={galleries} styles={{ preset }} />
       <div
-        className={`${preset === "social" && "flex flex-col gap-lg"}
+        className={`h-full ${preset === "social" && "flex flex-col gap-lg"}
         ${preset === "corporate" && "flex flex-col gap-lg p-xl"}
         ${preset === "vr" && "flex flex-col gap-lg"}
         ${preset === "game" && "flex flex-col gap-lg"}`}
@@ -108,10 +85,16 @@ const NrEventCard = ({ item }: { item: EventCardProps }) => {
             </div>
           )}
         </div>
-        <NrText>{descriptions}</NrText>
-        {featured && (
+        <NrText
+          styles={{
+            css: "line-clamp-3",
+          }}
+        >
+          {description}
+        </NrText>
+        {features && (
           <NrList
-            items={featured}
+            items={features}
             styles={{
               listDirection: "horizontal",
               columnCount:
@@ -127,7 +110,7 @@ const NrEventCard = ({ item }: { item: EventCardProps }) => {
                 href="#"
                 styles={{
                   icon: true,
-                  position: "right",
+                  placement: "right",
                   color: preset === "vr" ? "amber" : "light",
                 }}
               >
