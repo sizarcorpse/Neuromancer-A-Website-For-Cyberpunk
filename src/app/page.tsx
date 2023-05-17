@@ -1,13 +1,18 @@
-import { Header } from "@/components/navigation";
-import { HomeCorporate, HomeExplore, HomeHero } from "@/components/sections";
+import {
+  HomeBar,
+  HomeCorporate,
+  HomeExplore,
+  HomeHero,
+  Reviews,
+} from "@/components/sections";
 const Home = () => {
   return (
-    <main>
-      <Header />
+    <>
       <HomeHero />
       <HomeExplore />
       <HomeCorporate />
-    </main>
+      <Reviews />
+    </>
   );
 };
 
