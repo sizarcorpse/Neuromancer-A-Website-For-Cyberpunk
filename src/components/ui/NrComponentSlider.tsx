@@ -10,12 +10,12 @@ type NrImageSliderProps = {
 
 const dynamicComponents = {
   NrEventCard: dynamic(() => import("@/components/ui/NrEventCard")),
+  NrDjCard: dynamic(() => import("@/components/ui/NrDjCard")),
 };
 
 const NrComponentSlider: React.FC<NrImageSliderProps> = ({
   item,
   component,
-  styles,
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,

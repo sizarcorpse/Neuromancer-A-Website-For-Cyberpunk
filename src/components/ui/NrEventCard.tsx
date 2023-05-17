@@ -87,7 +87,7 @@ const NrEventCard = ({ item }: { item: NrEvent }) => {
         </div>
         <NrText
           styles={{
-            css: "line-clamp-3",
+            css: `${preset === "game" ? "line-clamp-6" : "line-clamp-3"}`,
           }}
         >
           {description}

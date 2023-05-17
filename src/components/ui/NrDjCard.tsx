@@ -1,32 +1,21 @@
 import { NrSocialCard, NrText, NrTitle } from "@/components/ui";
 import Image from "next/image";
 
-type NrDjCardProps = {
-  item: {
-    name: string;
-    descriptions: string;
-    image: {
-      src: string;
-      alt: string;
-    };
-    social: any;
-  };
-  styles?: {};
-};
+import { DjCard } from "@/types/dj";
 
-const NrDjCard: React.FC<NrDjCardProps> = ({ item }) => {
-  const { name, descriptions, image, social } = item;
+const NrDjCard: React.FC<DjCard> = ({ item }) => {
+  const { name, description, image, social } = item;
   return (
-    <article className="w-full h-full max-w-[261px] bg-amber-light rounded-lg">
-      <div className="w-full h-full flex flex-col">
+    <article className="w-full h-full max-w-xs rounded-lg overflow-hidden">
+      <div className="w-full h-full flex flex-col items-start justify-center">
         <Image
           src={image.src}
           alt={image.alt}
-          width={261}
-          height={180}
-          className="rounded-lg object-cover max-h-[180px]"
+          width={512}
+          height={288}
+          className="rounded-b-lg"
         />
-        <div className="p-lg flex flex-col gap-lg">
+        <div className="p-lg flex flex-col gap-lg bg-amber-light">
           <NrTitle
             component="h3"
             styles={{
@@ -40,9 +29,10 @@ const NrDjCard: React.FC<NrDjCardProps> = ({ item }) => {
             styles={{
               color: "dark",
               align: "center",
+              css: "line-clamp-3",
             }}
           >
-            {descriptions}
+            {description}
           </NrText>
           <NrSocialCard item={social} />
         </div>
