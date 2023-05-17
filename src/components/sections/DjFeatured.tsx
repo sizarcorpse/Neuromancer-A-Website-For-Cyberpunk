@@ -7,7 +7,7 @@ import {
   NrTitle,
 } from "@/components/ui";
 import { djsData } from "@/mock/data";
-import { Dj, DjCard, Djs } from "@/types/Dj";
+import { Dj, DjCard, Djs } from "@/types/dj";
 const DjFeatured = () => {
   return (
     <section className="bg-darker">

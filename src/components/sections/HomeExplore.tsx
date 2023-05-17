@@ -15,7 +15,7 @@ const HomeExplore = () => {
       <NrContainer
         styles={{
           size: "md",
-          css: "flex flex-col gap-20 px-xl items-center lg:max-w-screen-xl",
+          css: "flex flex-col gap-20 px-xl items-center justify-center lg:max-w-screen-xl",
         }}
       >
         <div className="flex flex-col gap-lg max-w-screen-md m-auto">
