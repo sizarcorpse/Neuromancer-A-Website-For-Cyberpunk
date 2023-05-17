@@ -62,8 +62,10 @@ module.exports = {
       flexBasis: {
         "column-2-gap-2": "calc(100% / 2 - 8px)",
         "column-3-gap-2": "calc(100% / 3 - 8px)",
+        "column-4-gap-2": "calc(100% / 4 - 8px)",
         "column-2-gap-4": "calc(100% / 2 - 16px)",
         "column-3-gap-4": "calc(100% / 3 - 16px)",
+        "column-4-gap-4": "calc(100% / 4 - 16px)",
       },
       backgroundImage: {
         "button-gradient":
@@ -76,6 +78,8 @@ module.exports = {
           "url('/assets/images/bg-p.png'), linear-gradient(180deg, rgba(15,23,42,1) 50%, rgba(9,9,11,1) 100%)",
         "home-corporate-bgi":
           "radial-gradient(#0b0d14 2px, #00000000 2px), linear-gradient(180deg, rgba(9,9,11,1) 50%, rgba(15,23,42,1) 100%)",
+        "dj-hero-bgi":
+          "linear-gradient(180deg, rgba(15,23,42,0.5) 80%, rgba(9,9,11,1) 100%), url('/assets/images/dj-hero.jpg')",
       },
       backgroundPosition: {
         "home-hero-bgp": "bottom center, center, center",
