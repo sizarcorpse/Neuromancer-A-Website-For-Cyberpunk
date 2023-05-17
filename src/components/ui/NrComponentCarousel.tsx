@@ -5,18 +5,24 @@ import dynamic from "next/dynamic";
 type NrComponentCarouselProps = {
   item: any;
   component: string;
-  styles?: {};
+  styles?: {
+    size?: "container" | "full";
+  };
 };
 
 const dynamicComponents = {
   NrEventCard: dynamic(() => import("@/components/ui/NrEventCard")),
   NrDjCard: dynamic(() => import("@/components/ui/NrDjCard")),
+  NrReviewCard: dynamic(() => import("@/components/ui/NrReviewCard")),
 };
 
 const NrComponentCarousel: React.FC<NrComponentCarouselProps> = ({
   item,
   component,
+  styles,
 }) => {
+  const { size } = styles || {};
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -28,7 +34,13 @@ const NrComponentCarousel: React.FC<NrComponentCarouselProps> = ({
     dynamicComponents[component as keyof typeof dynamicComponents];
 
   return (
-    <div className="overflow-hidden block w-full max-w-sm sm:max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl">
+    <div
+      className={`overflow-hidden block ${
+        size === "container"
+          ? "w-full max-w-sm sm:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
+          : "w-full"
+      }`}
+    >
       <div className="embla h-full relative">
         <div
           className={`embla__viewport overflow-hidden w-auto h-full`}
