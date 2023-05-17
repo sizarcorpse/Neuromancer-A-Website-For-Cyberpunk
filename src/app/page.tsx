@@ -1,5 +1,4 @@
 import {
-  HomeBar,
   HomeCorporate,
   HomeExplore,
   HomeHero,
