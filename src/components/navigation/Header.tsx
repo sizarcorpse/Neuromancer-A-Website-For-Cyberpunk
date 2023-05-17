@@ -1,3 +1,4 @@
+import { Drawer } from "@/components/navigation";
 import { NrContainer, NrDropdown, NrText } from "@/components/ui";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,27 +35,32 @@ const Header = () => {
   return (
     <header className="absolute mx-auto w-full h-auto">
       <NrContainer>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-lg">
           <div className="grow-0 shrink basis-52">
             <Link href="/">
               <Image src={Logo} width={208} height={36} alt="Neuromancer" />
             </Link>
           </div>
           <div className="flex flex-row gap-lg item items-center">
-            <Link href="/support">
-              <NrText>Support</NrText>
-            </Link>
-            <Link href="/events">
-              <NrText>Event</NrText>
-            </Link>
-            <NrDropdown
-              exploreData={exploreData as EventCardProps}
-              socialData={socialData}
-              actionLink="/explore"
-              styles={{
-                footer: true,
-              }}
-            />
+            <div className="hidden flex-row items-center justify-end gap-lg md:flex">
+              <Link href="/dj">
+                <NrText>Festival</NrText>
+              </Link>
+              <Link href="/vr">
+                <NrText>Virtual Reality</NrText>
+              </Link>
+            </div>
+            <div className="flex items-center justify-end gap-lg">
+              <NrDropdown
+                exploreData={exploreData as EventCardProps}
+                socialData={socialData}
+                actionLink="/explore"
+                styles={{
+                  footer: true,
+                }}
+              />
+              <Drawer />
+            </div>
           </div>
         </div>
       </NrContainer>
