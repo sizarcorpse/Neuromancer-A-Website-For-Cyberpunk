@@ -7,6 +7,8 @@ import {
   MdThumbUpOffAlt,
 } from "react-icons/md";
 
+import { Review } from "@/types/review";
+
 const NrLikeButton = () => {
   return (
     <button title="Icon Button" className="rounded-full p-xs">
@@ -15,12 +17,13 @@ const NrLikeButton = () => {
   );
 };
 
-const NrReviewCard = ({ rating = 4.5 }: { rating: number }) => {
+const NrReviewCard = ({ item }: { item: Review }) => {
+  const { rating, review, reviewer, avatar } = item;
   return (
-    <article className="group/review flex flex-col sm:flex-row items-start gap-lg bg-blue-gray rounded-lg p-lg max-w-xl cursor-pointer transition-all duration-300 hover:bg-white">
+    <article className="group/review h-full flex flex-col sm:flex-row items-start gap-lg bg-blue-gray rounded-lg p-lg max-w-xl cursor-pointer transition-all duration-300 hover:bg-white">
       <div className="basis-[64px]">
         <Image
-          src="/assets/images/dj-1.jpg"
+          src={avatar}
           alt="review"
           width={64}
           height={64}
@@ -55,10 +58,7 @@ const NrReviewCard = ({ rating = 4.5 }: { rating: number }) => {
             css: "line-clamp-4 transition-all duration-300 group-hover/review:text-dark",
           }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-          voluptatum amet. Sint explicabo optio exercitationem mollitia
-          perspiciatis harum dolor nihil autem consequuntur accusamus! Quaerat
-          culpa.
+          {review}
         </NrText>
         <NrTitle
           component="h5"
@@ -66,7 +66,7 @@ const NrReviewCard = ({ rating = 4.5 }: { rating: number }) => {
             css: "transition-all duration-300 group-hover/review:text-dark",
           }}
         >
-          The Grand Tiger
+          {reviewer}
         </NrTitle>
       </div>
     </article>
