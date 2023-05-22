@@ -1080,3 +1080,86 @@ export const reviewsData = [
       "If you're an adrenaline junkie like me, you'll love this VR experience! The games were intense, and I felt like I was actually in the virtual world. The equipment was top-of-the-line, and the staff was passionate about VR. I highly recommend trying out their thrilling VR games!",
   },
 ];
+
+export const footerData = [
+  {
+    title: "Explore",
+    items: [
+      {
+        title: "VR 9D Cinema",
+        href: "/",
+      },
+      {
+        title: "VR Free Roam",
+        href: "/",
+      },
+      {
+        title: "VR Escape Room",
+        href: "/",
+      },
+      {
+        title: "VR Arcade",
+        href: "/",
+      },
+      {
+        title: "VR Free Play",
+        href: "/",
+      },
+
+      {
+        title: "VR Party",
+        href: "/",
+      },
+      {
+        title: "VR Corporate",
+        href: "/",
+      },
+    ],
+  },
+  {
+    title: "Events",
+    items: [
+      {
+        title: "Family Fun Night",
+        href: "/",
+      },
+      {
+        title: "Family Fun Night",
+        href: "/",
+      },
+      {
+        title: "DJ Friday",
+        href: "/",
+      },
+    ],
+  },
+  {
+    title: "Games",
+    items: [
+      {
+        title: "Mission Sigma",
+        href: "/",
+      },
+      {
+        title: "Arizona Sunshine",
+        href: "/",
+      },
+      {
+        title: "Quantum Arena",
+        href: "/",
+      },
+      {
+        title: "The Walking Dead",
+        href: "/",
+      },
+      {
+        title: "Jungle Quest",
+        href: "/",
+      },
+      {
+        title: "Dynamite",
+        href: "/",
+      },
+    ],
+  },
+];
