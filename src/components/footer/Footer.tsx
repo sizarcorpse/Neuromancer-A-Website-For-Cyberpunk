@@ -6,95 +6,12 @@ import {
   NrText,
   NrTitle,
 } from "@/components/ui";
-import { socialData } from "@/mock/data";
+import { footerData, socialData } from "@/mock/data";
 import { Disclosure } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "public/assets/svg/Logo.svg";
 import { MdKeyboardArrowUp, MdShare } from "react-icons/md";
-
-const footerData = [
-  {
-    title: "Explore",
-    items: [
-      {
-        title: "VR 9D Cinema",
-        href: "/",
-      },
-      {
-        title: "VR Free Roam",
-        href: "/",
-      },
-      {
-        title: "VR Escape Room",
-        href: "/",
-      },
-      {
-        title: "VR Arcade",
-        href: "/",
-      },
-      {
-        title: "VR Free Play",
-        href: "/",
-      },
-
-      {
-        title: "VR Party",
-        href: "/",
-      },
-      {
-        title: "VR Corporate",
-        href: "/",
-      },
-    ],
-  },
-  {
-    title: "Events",
-    items: [
-      {
-        title: "Family Fun Night",
-        href: "/",
-      },
-      {
-        title: "Family Fun Night",
-        href: "/",
-      },
-      {
-        title: "DJ Friday",
-        href: "/",
-      },
-    ],
-  },
-  {
-    title: "Games",
-    items: [
-      {
-        title: "Mission Sigma",
-        href: "/",
-      },
-      {
-        title: "Arizona Sunshine",
-        href: "/",
-      },
-      {
-        title: "Quantum Arena",
-        href: "/",
-      },
-      {
-        title: "The Walking Dead",
-        href: "/",
-      },
-      {
-        title: "Jungle Quest",
-        href: "/",
-      },
-      {
-        title: "Dynamite",
-        href: "/",
-      },
-    ],
-  },
-];
 
 const NrShareButton = () => {
   return (
