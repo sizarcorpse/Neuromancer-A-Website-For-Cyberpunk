@@ -5,6 +5,7 @@ import { MdOutlineCircle } from "react-icons/md";
 
 type NrListItemProps = {
   children: ReactNode;
+  link?: string;
   style: {
     icon?: boolean;
     iconSource?: string;
@@ -15,7 +16,7 @@ type NrListItemProps = {
   };
 };
 
-const NrListItem = ({ children, style }: NrListItemProps) => {
+const NrListItem = ({ children, style, link }: NrListItemProps) => {
   const { icon, iconSource, iconPosition, color, fontSize, columnCount } =
     style;
 
@@ -26,7 +27,7 @@ const NrListItem = ({ children, style }: NrListItemProps) => {
       }`}
     >
       <Link
-        href={"#"}
+        href={link || "#"}
         className={`flex items-center gap-x-2 pointer-events-none
         ${
           iconPosition === "end"

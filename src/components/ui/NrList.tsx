@@ -1,8 +1,9 @@
 import { NrListItem } from "@/components/ui";
 type ListProps = {
   items: {
-    icon: string;
+    icon?: string;
     title: string;
+    link?: string;
   }[];
   styles?: {
     listDirection?: "horizontal" | "vertical";
@@ -22,13 +23,14 @@ const NrList = ({ items, styles }: ListProps) => {
       className={`flex ${
         listDirection === "horizontal"
           ? "flex-row flex-wrap gap-x-3 gap-y-3"
-          : "flex-col gap-y-3"
+          : "flex-col gap-y-2"
       }
         `}
     >
       {items.map((item, index) => (
         <NrListItem
           key={index}
+          link={item.link}
           style={{
             iconSource: `${item.icon}`,
             ...styles,
