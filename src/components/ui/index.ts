@@ -10,6 +10,7 @@ export { default as NrImageSlider } from "./NrImageSlider";
 export { default as NrLinkButton } from "./NrLinkButton";
 export { default as NrList } from "./NrList";
 export { default as NrListItem } from "./NrListItem";
+export { default as NrNewsletterCard } from "./NrNewsletterCard";
 export { default as NrReviewCard } from "./NrReviewCard";
 export { default as NrSocialCard } from "./NrSocialCard";
 export { default as NrText } from "./NrText";
