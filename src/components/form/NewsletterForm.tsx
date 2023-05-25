@@ -32,9 +32,9 @@ const NewsletterForm = () => {
     }
   ) => {
     try {
-      console.log(values);
+      resetForm();
     } catch (error) {
-      console.log(error);
+      resetForm();
     }
   };
 
@@ -47,26 +47,26 @@ const NewsletterForm = () => {
         validateOnChange={false}
         validateOnBlur={true}
       >
-        {(props) => {
-          const { values, touched, errors, handleChange, handleBlur } = props;
+        {() => {
           return (
             <Form>
-              <div className="grid grid-cols-1 gap-y-md">
+              <div className="grid grid-cols-1 gap-y-lg">
                 <div className="col-span-1">
                   <Field name="fullName">
-                    {({ field, form, meta }: any) => (
+                    {({ field, meta }: any) => (
                       <div>
                         <input
                           type="text"
+                          aria-label="Full Name"
                           {...field}
                           placeholder="Name"
                           id="fullName"
                           value={field.value}
                           className={`w-full px-lg py-md rounded-md bg-blue-gray text-gray ${
-                            meta.touched &&
-                            meta.error &&
-                            "border-2 border-red-500"
-                          }`}
+                            meta.touched && meta.error
+                              ? "border-2 border-red-500"
+                              : "border-2 border-transparent"
+                          } focus-amber`}
                         />
                       </div>
                     )}
@@ -74,19 +74,20 @@ const NewsletterForm = () => {
                 </div>
                 <div className="col-span-1">
                   <Field name="email">
-                    {({ field, form, meta }: any) => (
+                    {({ field, meta }: any) => (
                       <div>
                         <input
                           type="email"
                           {...field}
                           placeholder="Email"
+                          aria-label="Email"
                           id="email"
                           value={field.value}
                           className={`w-full px-lg py-md rounded-md bg-blue-gray text-gray ${
-                            meta.touched &&
-                            meta.error &&
-                            "border-2 border-red-500"
-                          }`}
+                            meta.touched && meta.error
+                              ? "border-2 border-red-500"
+                              : "border-2 border-transparent"
+                          } focus-amber`}
                         />
                       </div>
                     )}
