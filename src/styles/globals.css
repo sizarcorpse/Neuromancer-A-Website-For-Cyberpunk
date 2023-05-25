@@ -25,3 +25,12 @@
     @apply text-base;
   }
 }
+
+@layer components {
+  .focus-amber {
+    @apply focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent;
+  }
+  .focus-rose {
+    @apply focus:outline-none focus:ring-2 focus:ring-rose focus:border-transparent;
+  }
+}
