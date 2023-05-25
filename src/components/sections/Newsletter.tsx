@@ -8,9 +8,7 @@ import {
   NrTitle,
 } from "@/components/ui";
 import { socialData } from "@/mock/data";
-import { Tab } from "@headlessui/react";
-import Image from "next/image";
-import Link from "next/link";
+
 import { MdShare } from "react-icons/md";
 import { VscGithubInverted } from "react-icons/vsc";
 
@@ -84,8 +82,8 @@ const Newsletter = () => {
           size: "md",
         }}
       >
-        <div className="p-lg flex flex-wrap items-center justify-between bg-dark rounded-md max-w-screen-lg m-auto">
-          <div className="basis-12/12 p-0 lg:basis-6/12 lg:p-12 flex flex-col gap-y-12">
+        <div className="flex flex-wrap items-center justify-between gap-y-lg rounded-md lg:bg-dark lg:p-lg">
+          <div className="basis-12/12 order-1 p-lg bg-dark rounded-md flex flex-col justify-center gap-y-10 sm:p-16 md:p-24 lg:basis-6/12 lg:order-0 lg:bg-none lg:rounded-none lg:p-12 lg:gap-y-12 xl:p-24">
             <div className="flex flex-col gap-y-lg">
               <NrTitle component="h2">Welcome to Neuromancer</NrTitle>
               <NrText>
@@ -107,7 +105,7 @@ const Newsletter = () => {
             <Divider />
             <NewsletterForm />
           </div>
-          <div className="basis-12/12 lg:basis-6/12 grow-0">
+          <div className="basis-12/12 order-0 lg:basis-6/12 lg:order-1">
             <NrComponentSlider
               component="NrNewsletterCard"
               item={newsletterData}
