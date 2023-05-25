@@ -2,6 +2,7 @@ import {
   HomeCorporate,
   HomeExplore,
   HomeHero,
+  Newsletter,
   Reviews,
 } from "@/components/sections";
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <HomeExplore />
       <HomeCorporate />
       <Reviews />
+      <Newsletter />
     </>
   );
 };
