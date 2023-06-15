@@ -1,12 +1,22 @@
-type NrTitleProps = {
+interface NrTitleProps {
   children: React.ReactNode;
   component: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   styles?: {
-    color?: "light" | "dark" | "rose" | "amber" | "gray";
+    color?:
+      | "light"
+      | "dark"
+      | "rose"
+      | "amber"
+      | "gray"
+      | "nr-light"
+      | "nr-dark"
+      | "nr-rose"
+      | "nr-amber"
+      | "nr-gray";
     align?: "left" | "center" | "right" | "justify";
     css?: string;
   };
-};
+}
 
 const NrTitle: React.FC<NrTitleProps> = ({ children, component, styles }) => {
   const { color, align, css } = styles ?? {};

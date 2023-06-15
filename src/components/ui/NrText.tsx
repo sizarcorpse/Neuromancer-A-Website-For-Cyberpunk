@@ -1,12 +1,22 @@
-type NrTextProps = {
+interface NrTextProps {
   children: React.ReactNode;
   styles?: {
     align?: "left" | "center" | "right" | "justify";
-    color?: "light" | "dark" | "rose" | "amber" | "gray";
+    color?:
+      | "light"
+      | "dark"
+      | "rose"
+      | "amber"
+      | "gray"
+      | "nr-light"
+      | "nr-dark"
+      | "nr-rose"
+      | "nr-amber"
+      | "nr-gray";
     size?: "xs" | "sm";
     css?: string;
   };
-};
+}
 
 const NrText: React.FC<NrTextProps> = ({ children, styles }) => {
   const { align, color, size, css } = styles ?? {};
