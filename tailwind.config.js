@@ -5,7 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: ["text-gray"],
+  safelist: ["text-gray", "text-nr-gray"],
   theme: {
     extend: {
       colors: {
@@ -21,6 +21,18 @@ module.exports = {
         "rose-light": "#ffe4e6",
         "blue-dark": "#0f172a",
         "blue-gray": "#1e293b",
+        xxxx: "#00000",
+        "nr-black": "#020617",
+        "nr-light": "#f4f4f5",
+        "nr-dark": "#18181b",
+        "nr-darker": "#09090b",
+        "nr-amber": "#fbbf24",
+        "nr-rose": "#f43f5e",
+        "nr-gray": "#a1a1aa",
+        "nr-amber-light": "#fef3c7",
+        "nr-rose-light": "#ffe4e6",
+        "nr-blue-dark": "#0f172a",
+        "nr-blue-gray": "#1e293b",
       },
       container: {
         center: true,
