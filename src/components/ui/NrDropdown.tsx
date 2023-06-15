@@ -1,23 +1,23 @@
 "use client";
 import { NrLinkButton, NrSocialCard, NrText, NrTitle } from "@/components/ui";
-import { DropdownExplore } from "@/types/dropdown";
+import { DropdownProps } from "@/types";
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { Fragment } from "react";
 import { GiDeerHead } from "react-icons/gi";
 
-const NrDropdown: React.FC<DropdownExplore> = ({
-  exploreData,
-  socialData,
+const NrDropdown: React.FC<DropdownProps> = ({
+  featured,
+  socials,
   actionLink,
   styles,
 }) => {
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <Menu.Button className="inline-flex w-full justify-center rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30">
+      <Menu.Button className="inline-flex w-full justify-center rounded-md bg-nr-dark bg-opacity-20 px-4 py-2 text-sm font-medium text-nr-light hover:bg-opacity-30">
         Explore
         <GiDeerHead
-          className="ml-2 -mr-1 h-5 w-5 text-light hover:text-violet-100"
+          className="ml-2 -mr-1 h-5 w-5 text-nr-light hover:text-violet-100"
           aria-hidden="true"
         />
       </Menu.Button>
@@ -30,13 +30,13 @@ const NrDropdown: React.FC<DropdownExplore> = ({
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-96 origin-top-right rounded-md bg-blue-dark shadow-dropdown-shadow ">
+        <Menu.Items className="absolute right-0 mt-2 w-80 max-w-xs origin-top-right rounded-md bg-nr-blue-dark shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] sm:max-w-none sm:w-96">
           <div className="p-2">
-            {exploreData.map((item, index) => (
+            {featured.map((item, index) => (
               <Menu.Item key={index}>
-                <div className="group flex flex-row rounded-md cursor-pointer p-2 gap-4 transition-colors duration-200 hover:bg-light">
+                <div className="group flex flex-row rounded-md cursor-pointer p-2 gap-4 transition-colors duration-200 hover:bg-nr-light">
                   {item.icon && (
-                    <div className="grow shrink basis-16 h-16 flex items-center justify-center bg-blue-gray rounded-md">
+                    <div className="grow shrink basis-20 h-16 flex items-center justify-center bg-nr-blue-gray rounded-md sm:basis-16">
                       <Image
                         src={item.icon}
                         alt={item.title}
@@ -46,11 +46,11 @@ const NrDropdown: React.FC<DropdownExplore> = ({
                       />
                     </div>
                   )}
-                  <div className="grow shrink basis-72">
+                  <div className="grow shrink basis-64 sm:basis-72">
                     <NrTitle
                       component="h5"
                       styles={{
-                        css: "group-hover:text-rose",
+                        css: "group-hover:text-nr-rose",
                       }}
                     >
                       {item.title}
@@ -58,8 +58,8 @@ const NrDropdown: React.FC<DropdownExplore> = ({
                     <NrText
                       styles={{
                         size: "xs",
-                        color: "gray",
-                        css: "group-hover:text-dark",
+                        color: "nr-gray",
+                        css: "group-hover:text-nr-dark",
                       }}
                     >
                       {item.description}
@@ -72,7 +72,7 @@ const NrDropdown: React.FC<DropdownExplore> = ({
             {styles?.footer && (
               <Menu.Item>
                 <div
-                  className={`flex flex-row items-center justify-between rounded-md cursor-pointer p-2 gap-4 bg-slate-950`}
+                  className={`flex flex-row items-center justify-between rounded-md cursor-pointer p-2 gap-4 bg-nr-black`}
                 >
                   {actionLink && (
                     <NrLinkButton
@@ -82,7 +82,7 @@ const NrDropdown: React.FC<DropdownExplore> = ({
                       Explore Universe
                     </NrLinkButton>
                   )}
-                  {socialData && <NrSocialCard item={socialData} />}
+                  {socials && <NrSocialCard item={socials} />}
                 </div>
               </Menu.Item>
             )}

@@ -1,41 +1,20 @@
 import { Drawer } from "@/components/navigation";
-import { NrContainer, NrDropdown, NrText } from "@/components/ui";
+import { NrDropdown, NrText } from "@/components/ui";
+import { header } from "@/mock/db";
+import { NrEvents } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "public/assets/svg/Logo.svg";
 
-import { exploreData, socialData } from "@/mock/data";
-
-type EventCardProps = {
-  uuid: string;
-  preset: "social" | "corporate" | "vr" | "game";
-  galleries: {
-    src: string;
-    alt: string;
-  }[];
-  icon: string;
-  title: string;
-  status?: "Coming Soon" | "Live" | "Ended" | "Cancelled";
-  description: string;
-  featured?: {
-    icon: string;
-    title: string;
-  }[];
-  action?: {
-    type: "link" | "button";
-    label: string;
-    href: string;
-  };
-  share?: {
-    enabled: boolean;
-  };
-}[];
-
 const Header = () => {
+  const {
+    dropdown: { featuredEvents, socials, actionLink, styles },
+    navigation,
+  } = header;
   return (
     <header className="absolute mx-auto w-full h-auto">
-      <NrContainer>
-        <div className="flex items-center justify-between gap-lg">
+      <div className="mx-auto px-6 py-xl sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl">
+        <nav className="flex items-center justify-between gap-lg">
           <div className="grow-0 shrink basis-52">
             <Link href="/">
               <Image src={Logo} width={208} height={36} alt="Neuromancer" />
@@ -43,27 +22,26 @@ const Header = () => {
           </div>
           <div className="flex flex-row gap-lg item items-center">
             <div className="hidden flex-row items-center justify-end gap-lg md:flex">
-              <Link href="/dj">
-                <NrText>Festival</NrText>
-              </Link>
-              <Link href="/vr">
-                <NrText>Virtual Reality</NrText>
-              </Link>
+              {navigation.map((item, index) => (
+                <Link href={item.href} key={index}>
+                  <NrText>{item.label}</NrText>
+                </Link>
+              ))}
             </div>
             <div className="flex items-center justify-end gap-lg">
+              <Drawer socials={socials} actionLink={actionLink} />
               <NrDropdown
-                exploreData={exploreData as EventCardProps}
-                socialData={socialData}
-                actionLink="/explore"
+                featured={featuredEvents as NrEvents}
+                socials={socials}
+                actionLink={actionLink}
                 styles={{
-                  footer: true,
+                  footer: styles.footer,
                 }}
               />
-              <Drawer />
             </div>
           </div>
-        </div>
-      </NrContainer>
+        </nav>
+      </div>
     </header>
   );
 };

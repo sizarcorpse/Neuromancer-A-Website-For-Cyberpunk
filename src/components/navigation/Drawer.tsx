@@ -1,6 +1,6 @@
 "use client";
-import { NrSocialCard } from "@/components/ui";
-import { socialData } from "@/mock/data";
+import { NrLinkButton, NrSocialCard } from "@/components/ui";
+import { DrawerProps } from "@/types";
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import Logo from "public/assets/svg/Logo.svg";
 import { Fragment, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const Drawer = () => {
+const Drawer: React.FC<DrawerProps> = ({ actionLink, socials }) => {
   let [isOpenDrawer, setOpenDrawer] = useState(false);
 
   const handleCloseDrawer = () => {
@@ -25,7 +25,7 @@ const Drawer = () => {
         title="Open Menu"
         type="button"
         onClick={handleOpenDrawer}
-        className="inline-flex w-full justify-center px-2 py-2 text-sm font-medium text-white hover:bg-opacity-30"
+        className="inline-flex w-full justify-center px-2 py-2 text-sm font-medium text-nr-light hover:bg-opacity-30"
       >
         <GiHamburgerMenu className="text-lg" aria-hidden="true" />
       </button>
@@ -47,7 +47,7 @@ const Drawer = () => {
                 leaveFrom="translate-x-0"
                 leaveTo="-translate-x-full"
               >
-                <Dialog.Panel className="w-full h-full max-w-md transform overflow-hidden bg-blue-dark p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full h-full max-w-md transform overflow-hidden bg-nr-blue-dark p-6 text-left align-middle shadow-xl transition-all">
                   <div className="w-full h-full flex flex-col items-start">
                     <div className="grow">
                       <Link href="/">
@@ -59,8 +59,18 @@ const Drawer = () => {
                         />
                       </Link>
                     </div>
-                    <div>
-                      <NrSocialCard item={socialData} />
+                    <div
+                      className={`w-full flex flex-row items-center justify-between rounded-md cursor-pointer p-2 gap-4 bg-nr-black`}
+                    >
+                      {actionLink && (
+                        <NrLinkButton
+                          href="/explore"
+                          styles={{ icon: true, size: "xs" }}
+                        >
+                          Explore Universe
+                        </NrLinkButton>
+                      )}
+                      {<NrSocialCard item={socials} />}
                     </div>
                   </div>
                 </Dialog.Panel>
