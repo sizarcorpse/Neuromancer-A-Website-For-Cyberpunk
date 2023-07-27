@@ -6,12 +6,34 @@ import {
   NrText,
   NrTitle,
 } from "@/components/ui";
-import { exploreData } from "@/mock/data";
 import { NrEvent, NrEvents } from "@/types/event";
+import { FC } from "react";
 
-const HomeExplore = () => {
+interface Explore {
+  explore: {
+    images: {};
+    content: {
+      title: string;
+      description: string;
+      events: NrEvents;
+      primaryAction: {
+        type: string;
+        label: string;
+        href: string;
+      };
+    };
+  };
+}
+
+const HomeExplore: FC<Explore> = ({ explore }) => {
+  const {
+    content: { title, description, events, primaryAction },
+  } = explore;
+
   return (
-    <section className="bg-home-explore-bgi bg-no-repeat bg-cover">
+    <section
+      className={`bg-[url("/assets/media/home-explore-background-pattern.png"),linear-gradient(180deg,rgba(15,23,42,1)_50%,rgba(9,9,11,1)_100%)] bg-no-repeat bg-cover`}
+    >
       <NrContainer
         styles={{
           size: "md",
@@ -25,20 +47,18 @@ const HomeExplore = () => {
               align: "center",
             }}
           >
-            Enjoy our VR Experiences
+            {title}
           </NrTitle>
           <NrText
             styles={{
               align: "center",
             }}
           >
-            Experience the thrill and excitement of VR gaming with our range of
-            fun-filled VR experiences. Great for getting active and spending
-            quality time with loved ones.
+            {description}
           </NrText>
         </div>
         <div className="hidden max-w-screen-xl m-auto md:flex flex-col flex-wrap justify-center items-stretch gap-6 md:flex-row">
-          {exploreData.map((item, index) => (
+          {events.map((item, index) => (
             <div
               key={index}
               className={`grow shrink justify-center md:basis-column-2-gap-4 lg:basis-column-3-gap-4`}
@@ -49,17 +69,19 @@ const HomeExplore = () => {
         </div>
         <div className="block w-full max-w-sm md:hidden">
           <NrComponentSlider
-            item={exploreData as NrEvents}
+            item={events as NrEvents}
             component="NrEventCard"
           />
         </div>
-        <NrButton
-          styles={{
-            icon: true,
-          }}
-        >
-          Book Now
-        </NrButton>
+        {primaryAction && (
+          <NrButton
+            styles={{
+              icon: true,
+            }}
+          >
+            {primaryAction.label}
+          </NrButton>
+        )}
       </NrContainer>
     </section>
   );
