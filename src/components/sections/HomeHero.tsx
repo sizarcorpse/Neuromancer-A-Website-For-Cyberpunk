@@ -5,9 +5,38 @@ import {
   NrText,
   NrTitle,
 } from "@/components/ui";
-const HomeHero = () => {
+
+interface Hero {
+  hero: {
+    images: {
+      background?: string;
+    };
+    content: {
+      title: string;
+      description: string;
+      primaryAction: {
+        type: string;
+        label: string;
+        href: string;
+      };
+      secondaryAction: {
+        type: string;
+        label: string;
+        href: string;
+      };
+    };
+  };
+}
+
+const HomeHero: React.FC<Hero> = ({ hero }) => {
+  const {
+    content: { title, description, primaryAction, secondaryAction },
+  } = hero;
+
   return (
-    <section className="grid min-h-screen bg-home-hero-bgi bg-no-repeat bg-home-hero-bgp bg-home-hero-bgs">
+    <section
+      className={`grid min-h-screen bg-[linear-gradient(0deg,rgba(15,23,42,1)_0%,rgba(9,9,121,0)_40%),url('/assets/images/bg-p.svg'),url('/assets/media/home-hero-background.jpg')] bg-center bg-[100%_100%,cover,cover] bg-no-repeat`}
+    >
       <NrContainer
         styles={{
           css: "flex flex-col items-start justify-end gap-y-10",
@@ -18,19 +47,17 @@ const HomeHero = () => {
             component="h1"
             styles={{
               align: "left",
+              css: "text-4xl font-bold",
             }}
           >
-            Explore Endless Realities with our VR Experiences
+            {title}
           </NrTitle>
           <NrText
             styles={{
               align: "left",
             }}
           >
-            Whether you are looking for a chill bar to host a VR party, a new
-            kind of experience for dates and get-togethers, or just want to
-            escape reality for a minute while having fun at it, VR Social is for
-            you.
+            {description}
           </NrText>
         </div>
         <div className="flex items-start justify-center gap-lg flex-col sm:flex-row sm:items-center">
@@ -39,7 +66,7 @@ const HomeHero = () => {
               icon: false,
             }}
           >
-            Rule The Universe
+            {primaryAction.label}
           </NrButton>
           <NrLinkButton
             styles={{
@@ -48,7 +75,7 @@ const HomeHero = () => {
             }}
             href="/vr"
           >
-            Explore Neuromancer
+            {secondaryAction.label}
           </NrLinkButton>
         </div>
       </NrContainer>
