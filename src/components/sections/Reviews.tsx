@@ -4,9 +4,30 @@ import {
   NrText,
   NrTitle,
 } from "@/components/ui";
-import { reviewsData } from "@/mock/data";
 
-const Reviews = () => {
+import { FC } from "react";
+
+interface Reviews {
+  reviews: {
+    images: {};
+    content: {
+      title: string;
+      description: string;
+      reviews: {
+        uuid: string;
+        reviewer: string;
+        avatar: string;
+        rating: number;
+        review: string;
+      }[];
+    };
+  };
+}
+
+const Reviews: FC<Reviews> = ({ reviews }) => {
+  const {
+    content: { title, description, reviews: reviewsData },
+  } = reviews;
   return (
     <section className="bg-blue-dark">
       <NrContainer
@@ -21,15 +42,14 @@ const Reviews = () => {
               align: "center",
             }}
           >
-            And here’s what our happy customers have to say...
+            {title}
           </NrTitle>
           <NrText
             styles={{
               align: "center",
             }}
           >
-            Whether you visit alone or with friends and family, we always aim to
-            make every minute you spend with us enjoyable.
+            {description}
           </NrText>
         </div>
         <NrComponentCarousel
