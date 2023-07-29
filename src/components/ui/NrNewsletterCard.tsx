@@ -2,9 +2,24 @@ import { NrText } from "@/components/ui";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "public/assets/svg/Logo.svg";
+import { FC } from "react";
 
-const NrNewsletterCard = ({ item }: { item: any }) => {
-  const { image, description, author } = item;
+interface NrNewsletterCard {
+  item: {
+    image: {
+      src: string;
+      alt: string;
+    };
+    review: string;
+    author: {
+      name: string;
+      role: string;
+    };
+  };
+}
+
+const NrNewsletterCard: FC<NrNewsletterCard> = ({ item }) => {
+  const { image, review, author } = item;
   return (
     <article className="relative">
       <div>
@@ -31,13 +46,12 @@ const NrNewsletterCard = ({ item }: { item: any }) => {
               css: "text-base text-justify line-clamp-5 sm:line-clamp-none sm:text-lg md:text-xl xl:text-2xl",
             }}
           >
-            {description}
+            {review}
           </NrText>
-
           <div>
             <NrText
               styles={{
-                css: "text-sm text-bold mb-1",
+                css: "text-sm font-bold mb-1",
               }}
             >
               {author.name}
