@@ -35,7 +35,7 @@ const NrLinkButton = ({ href, styles, children }: NrLinkButtonProps) => {
       ${size ? `text-${size}` : "text-sm"}
       ${size === "xs" ? "font-medium" : "font-semibold"}
       ${css ? `${css}` : ""}
-      hover:text-amber
+      hover:text-nr-amber
       `}
     >
       <span>{children}</span>

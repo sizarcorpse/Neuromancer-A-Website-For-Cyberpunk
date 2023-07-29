@@ -1,23 +1,27 @@
-import { ReactNode } from "react";
+import { cx } from "@/utils/cx";
+import { FC, ReactNode } from "react";
 
-type NrContainerProps = {
+interface NrContainerProps {
   children: ReactNode;
   styles?: {
     css?: string;
-    size?: "sm" | "md" | "lg";
+    size?: "md";
   };
-};
+}
 
-const NrContainer: React.FC<NrContainerProps> = ({ children, styles }) => {
+const NrContainer: FC<NrContainerProps> = ({ children, styles }) => {
   const { css, size } = styles || {};
 
   return (
     <div
-      className={`container mx-auto px-6 py-6 ${
-        size === "md"
-          ? "lg:max-w-screen-xl px-xl"
-          : "sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl"
-      } ${css ? css : ""} sm:py-10 md:py-14 lg:py-20`}
+      className={cx(
+        `container mx-auto px-6 py-6 ${
+          size === "md"
+            ? "lg:max-w-screen-xl px-xl"
+            : "sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl"
+        } sm:py-10 md:py-14 lg:py-20`,
+        css
+      )}
     >
       {children}
     </div>

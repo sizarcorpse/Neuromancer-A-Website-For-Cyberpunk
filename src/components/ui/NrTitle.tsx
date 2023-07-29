@@ -1,5 +1,7 @@
+import { cx } from "@/utils/cx";
+import { FC, ReactNode } from "react";
 interface NrTitleProps {
-  children: React.ReactNode;
+  children: ReactNode;
   component: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   styles?: {
     color?:
@@ -18,15 +20,17 @@ interface NrTitleProps {
   };
 }
 
-const NrTitle: React.FC<NrTitleProps> = ({ children, component, styles }) => {
+const NrTitle: FC<NrTitleProps> = ({ children, component, styles }) => {
   const { color, align, css } = styles ?? {};
-  const Element = component || "h1";
+  const Element = component || "h2";
   return (
     <Element
-      className={`
-        ${color ? `text-${color}` : "text-white"}
-        ${align ? `text-${align}` : "text-left"}
-        ${css ? `${css}` : ""}`}
+      className={cx(
+        `
+      ${color ? `text-${color}` : "text-nr-light"}
+      ${align ? `text-${align}` : "text-left"}`,
+        css
+      )}
     >
       {children}
     </Element>

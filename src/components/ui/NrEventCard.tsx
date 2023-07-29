@@ -49,22 +49,6 @@ const NrEventCard = ({ item }: { item: NrEvent }) => {
       }
       `}
     >
-      {/* <Image
-        src={images[0].src}
-        alt={images[0].alt}
-        width="0"
-        height="0"
-        sizes="100vw"
-        style={{ width: "100%", height: "100%" }}
-        priority={true}
-        className={`
-        bg-cover
-        ${
-          preset === "corporate"
-            ? "rounded-t-lg w-full max-h-[291px] lg:rounded-none lg:rounded-l-lg md:max-w-[420px]"
-            : "rounded-t-lg"
-        }`}
-      /> */}
       <NrImageSlider item={galleries} styles={{ preset }} />
       <div
         className={`h-full ${preset === "social" && "flex flex-col gap-lg"}

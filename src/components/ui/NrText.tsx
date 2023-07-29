@@ -1,5 +1,7 @@
+import { cx } from "@/utils/cx";
+import { FC, ReactNode } from "react";
 interface NrTextProps {
-  children: React.ReactNode;
+  children: ReactNode;
   styles?: {
     align?: "left" | "center" | "right" | "justify";
     color?:
@@ -18,15 +20,18 @@ interface NrTextProps {
   };
 }
 
-const NrText: React.FC<NrTextProps> = ({ children, styles }) => {
+const NrText: FC<NrTextProps> = ({ children, styles }) => {
   const { align, color, size, css } = styles ?? {};
   return (
     <p
-      className={`
-        ${color ? `text-${color}` : "text-white"}
-        ${align ? `text-${align}` : "text-left"}
-        ${size ? `text-${size}` : "text-base"}
-        ${css ? `${css}` : ""}`}
+      className={cx(
+        `
+      ${color ? `text-${color}` : "text-nr-light"}
+      ${align ? `text-${align}` : "text-left"}
+      ${size ? `text-${size}` : "text-base"}
+      `,
+        css
+      )}
     >
       {children}
     </p>
