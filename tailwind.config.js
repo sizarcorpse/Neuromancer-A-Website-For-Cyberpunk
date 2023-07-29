@@ -84,21 +84,8 @@ module.exports = {
           "linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%)",
         "event-vr-gradient":
           "linear-gradient(206.78deg, #FFCE31 2.92%, #B46B4D 26.52%, #670569 77.4%)",
-        "home-hero-bgi":
-          "linear-gradient(0deg, rgba(15,23,42,1) 0%, rgba(9,9,121,0) 50%), url('/assets/images/bg-p.svg'),url('/assets/images/home-hero.jpg')",
-        "home-explore-bgi":
-          "url('/assets/images/bg-p.png'), linear-gradient(180deg, rgba(15,23,42,1) 50%, rgba(9,9,11,1) 100%)",
-        "home-corporate-bgi":
-          "radial-gradient(#0b0d14 2px, #00000000 2px), linear-gradient(180deg, rgba(9,9,11,1) 50%, rgba(15,23,42,1) 100%)",
         "dj-hero-bgi":
           "linear-gradient(180deg, rgba(15,23,42,0.5) 80%, rgba(9,9,11,1) 100%), url('/assets/images/dj-hero.jpg')",
-      },
-      backgroundPosition: {
-        "home-hero-bgp": "bottom center, center, center",
-      },
-      backgroundSize: {
-        "home-hero-bgs": "100% 30%, cover, cover",
-        "home-corporate-bgs": "40px 40px, cover",
       },
       boxShadow: {
         "button-shadow":
@@ -110,5 +97,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
