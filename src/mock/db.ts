@@ -1000,3 +1000,27 @@ export const home = {
     },
   },
 };
+
+export const festival = {
+  hero: {
+    images: {
+      background: "/assets/media/home-hero-background.jpg",
+    },
+    content: {
+      title:
+        "Embark on an Epic Journey through Boundless Realms with our Mesmerizing VR Adventures!",
+      description:
+        "Indulge in Unforgettable Moments at VR Social: Where Extraordinary Bar Experiences, Unparalleled Connections, and Immersive Escapes from Reality Converge.",
+      primaryAction: {
+        type: "button",
+        label: "Rule The Universe",
+        href: "/explore",
+      },
+      secondaryAction: {
+        type: "link",
+        label: "Explore Neuromancer",
+        href: "/explore",
+      },
+    },
+  },
+};
