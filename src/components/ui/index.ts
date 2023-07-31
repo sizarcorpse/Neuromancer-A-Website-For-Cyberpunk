@@ -5,6 +5,7 @@ export { default as NrContainer } from "./NrContainer";
 export { default as NrDjCard } from "./NrDjCard";
 export { default as NrDropdown } from "./NrDropdown";
 export { default as NrEventCard } from "./NrEventCard";
+export { default as NrFestivalCard } from "./NrFestivalCard";
 export { default as NrImageBox } from "./NrImageBox";
 export { default as NrImageSlider } from "./NrImageSlider";
 export { default as NrLinkButton } from "./NrLinkButton";

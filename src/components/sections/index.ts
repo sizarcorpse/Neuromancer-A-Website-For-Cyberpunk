@@ -1,4 +1,5 @@
 export { default as DjFeatured } from "./DjFeatured";
+export { default as DjFestival } from "./DjFestival";
 export { default as DjHero } from "./DjHero";
 export { default as DjWhy } from "./DjWhy";
 export { default as HomeCorporate } from "./HomeCorporate";
