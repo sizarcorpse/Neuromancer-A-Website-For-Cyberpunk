@@ -5,9 +5,39 @@ import {
   NrText,
   NrTitle,
 } from "@/components/ui";
-const DjHero = () => {
+import { FC } from "react";
+
+interface DjHeroProps {
+  hero: {
+    images: {
+      background: string;
+    };
+    content: {
+      title: string;
+      description: string;
+      primaryAction: {
+        type: string;
+        label: string;
+        href: string;
+      };
+      secondaryAction: {
+        type: string;
+        label: string;
+        href: string;
+      };
+    };
+  };
+}
+
+const DjHero: FC<DjHeroProps> = ({ hero }) => {
+  const {
+    images,
+    content: { title, description, primaryAction, secondaryAction },
+  } = hero;
   return (
-    <section className="grid items-center justify-center min-h-screen bg-cover bg-dj-hero-bgi bg-no-repeat">
+    <section
+      className={`grid items-center justify-center min-h-screen bg-[linear-gradient(180deg,rgba(15,23,42,0.4)_60%,rgba(9,9,11,1)_100%),url('/assets/media/festival-hero-background.jpg')] bg-bottom bg-cover bg-no-repeat`}
+    >
       <NrContainer
         styles={{
           css: "flex flex-col items-center justify-end gap-y-10",
@@ -20,15 +50,14 @@ const DjHero = () => {
               align: "center",
             }}
           >
-            DJ Fridays: Pre-party like you’ve never experienced before
+            {title}
           </NrTitle>
           <NrText
             styles={{
               align: "center",
             }}
           >
-            Tired of the same old routine every week? Spice things up with DJ
-            Fridays - the perfect way to wrap off your week in style!
+            {description}
           </NrText>
         </div>
         <div className="flex items-center justify-center gap-lg flex-col sm:flex-row sm:items-center">
@@ -37,16 +66,16 @@ const DjHero = () => {
               icon: true,
             }}
           >
-            Beyond The Universe
+            {primaryAction.label}
           </NrButton>
           <NrLinkButton
             styles={{
               icon: true,
-              color: "amber",
+              color: "nr-amber",
             }}
             href="/vr"
           >
-            Explore Neuromancer
+            {secondaryAction.label}
           </NrLinkButton>
         </div>
       </NrContainer>
