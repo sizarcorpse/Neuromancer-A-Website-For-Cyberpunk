@@ -1,5 +1,4 @@
 import {
-  NrButton,
   NrContainer,
   NrLinkButton,
   NrList,
@@ -7,31 +6,39 @@ import {
   NrTitle,
 } from "@/components/ui";
 import Image from "next/image";
+import { FC } from "react";
 
-const listData = [
-  {
-    icon: "",
-    title: "Relief stress and relax.",
-  },
-  {
-    icon: "",
-    title: "Enjoy live and fun entertainment.",
-  },
-  {
-    icon: "",
-    title: "Socialize and build your network.",
-  },
-  {
-    icon: "",
-    title: "Move and exercise with thrilling VR games.",
-  },
-];
+interface DjWhyProps {
+  why: {
+    images: {};
+    content: {
+      title: string;
+      description: string;
+      features: {
+        icon: string;
+        title: string;
+      }[];
+      primaryAction: {
+        type: string;
+        label: string;
+        href: string;
+      };
+    };
+  };
+}
 
-const DjWhy = () => {
+const DjWhy: FC<DjWhyProps> = ({ why }) => {
+  const {
+    content: { title, description, features, primaryAction },
+  } = why;
   return (
-    <section className="grid items-center justify-center bg-darker">
-      <NrContainer>
-        <div className="flex flex-wrap items-center gap-6 max-w-screen-lg lg:gap-10">
+    <section className="grid items-center justify-center bg-nr-darker bg-[linear-gradient(180deg,rgba(42,15,15,0)_50%,rgba(9,9,11,1)_100%),linear-gradient(0deg,rgba(42,15,15,0)_50%,rgba(9,9,11,1)_100%),url('/assets/media/festival-explore-background-bg.png')]">
+      <NrContainer
+        styles={{
+          size: "md",
+        }}
+      >
+        <div className="flex flex-wrap items-center gap-6 max-w-6xl lg:gap-10">
           <div className="basis-full lg:basis-[512px]">
             <Image
               src="/assets/images/gallery-image-1.jpg"
@@ -46,21 +53,21 @@ const DjWhy = () => {
               component="h2"
               styles={{
                 color: "light",
+                css: "max-w-[20ch]",
               }}
             >
-              The perfect way to enter your weekends
+              {title}
             </NrTitle>
             <NrText
               styles={{
-                color: "gray",
+                color: "nr-gray",
               }}
             >
-              Kick-off your weekends in positive energy. Dance and game the
-              night away with electrifying beats from hottest DJs in Denver.
+              {description}
             </NrText>
-            <NrList items={listData} />
-            <NrLinkButton href="/vr" styles={{ color: "rose", icon: true }}>
-              Explore Neuromancer
+            <NrList items={features} />
+            <NrLinkButton href="/vr" styles={{ color: "nr-rose", icon: true }}>
+              {primaryAction.label}
             </NrLinkButton>
           </div>
         </div>
