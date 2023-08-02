@@ -1004,13 +1004,12 @@ export const home = {
 export const festival = {
   hero: {
     images: {
-      background: "/assets/media/home-hero-background.jpg",
+      background: "/assets/media/festival-hero-background.jpg",
     },
     content: {
-      title:
-        "Embark on an Epic Journey through Boundless Realms with our Mesmerizing VR Adventures!",
+      title: "The most epic party for your weekend is here!",
       description:
-        "Indulge in Unforgettable Moments at VR Social: Where Extraordinary Bar Experiences, Unparalleled Connections, and Immersive Escapes from Reality Converge.",
+        "Escape from the mundane weekly routine and join the cosmic party - the ultimate way to blast off your week into the stars",
       primaryAction: {
         type: "button",
         label: "Rule The Universe",
@@ -1021,6 +1020,152 @@ export const festival = {
         label: "Explore Neuromancer",
         href: "/explore",
       },
+    },
+  },
+  why: {
+    images: {},
+    content: {
+      title: "The perfect way to enter your weekends",
+      description:
+        "Kick-off your weekends in positive energy. Dance and game the night away with electrifying beats from hottest DJs in Denver.",
+      features: [
+        {
+          icon: "",
+          title: "Relief stress and relax.",
+        },
+        {
+          icon: "",
+          title: "Enjoy live and fun entertainment.",
+        },
+        {
+          icon: "",
+          title: "Socialize and build your network.",
+        },
+        {
+          icon: "",
+          title: "Move and exercise with thrilling VR games.",
+        },
+      ],
+      primaryAction: {
+        type: "button",
+        label: "Rule The Universe",
+        href: "/explore",
+      },
+    },
+  },
+  dj: {
+    images: {},
+    content: {
+      title: "Featured DJs",
+      description:
+        "From dance hall to hip-hop and everything in between, our Featured DJs are the crème de la crème of the local music scene, ready to get you moving.",
+      djs: [
+        {
+          name: "Excision",
+          description:
+            "Jeff Abel, better known by his stage name Excision, is a Canadian producer and disc jockey.",
+          image: {
+            src: "/assets/images/dj-8.jpg",
+            alt: "Excision",
+          },
+          social: {
+            facebook: "https://www.facebook.com/Excision/",
+            instagram: "https://www.instagram.com/excisionofficial/",
+            twitter: "https://twitter.com/excision",
+            soundcloud: "https://soundcloud.com/excision",
+          },
+        },
+        {
+          name: "Skrillex",
+          description:
+            "Sonny John Moore, known professionally as Skrillex, is an American DJ, record producer, musician, singer and songwriter.",
+          image: {
+            src: "/assets/images/dj-5.jpg",
+            alt: "Skrillex",
+          },
+          social: {
+            facebook: "https://www.facebook.com/skrillex",
+            instagram: "https://www.instagram.com/skrillex/",
+            twitter: "https://twitter.com/skrillex",
+            soundcloud: "https://soundcloud.com/skrillex",
+          },
+        },
+        {
+          name: "Diplo",
+          description:
+            "Thomas Wesley Pentz Jr., known professionally as Diplo, is an American DJ, songwriter, and record producer based in Los Angeles, California.",
+          image: {
+            src: "/assets/images/dj-6.jpg",
+            alt: "Diplo",
+          },
+          social: {
+            facebook: "https://www.facebook.com/diplo/",
+            instagram: "https://www.instagram.com/diplo/",
+            twitter: "https://twitter.com/diplo",
+            soundcloud: "https://soundcloud.com/diplo",
+          },
+        },
+        {
+          name: "Avicii",
+          description:
+            "Tim Bergling, known professionally as Avicii, was a Swedish DJ, electronic musician, and songwriter.",
+          image: {
+            src: "/assets/images/dj-7.jpg",
+            alt: "Avicii",
+          },
+          social: {
+            facebook: "https://www.facebook.com/avicii/",
+            instagram: "https://www.instagram.com/avicii/",
+            twitter: "https://twitter.com/avicii",
+            soundcloud: "https://soundcloud.com/aviciiofficial",
+          },
+        },
+      ],
+      primaryAction: {
+        type: "button",
+        label: "Explore DJs",
+        href: "#",
+      },
+    },
+  },
+  festivals: {
+    images: {},
+    content: {
+      title: "Featured Festivals",
+      description:
+        "From dance hall to hip-hop and everything in between, our Featured DJs are the crème de la crème of the local music scene, ready to get you moving.",
+      festivals: [
+        {
+          banner: {
+            src: "/assets/media/slider-image-9.jpg",
+            alt: "Festival",
+          },
+          time: {
+            start: "2 days left",
+          },
+          logo: {
+            src: "/assets/svg/VrDjIcon.svg",
+            alt: "VrDjIcon",
+          },
+          title:
+            "Create unlimited graphics for your work with our rich collection of tools.",
+        },
+        {
+          banner: {
+            src: "/assets/media/slider-image-8.jpg",
+            alt: "Festival",
+          },
+          time: {
+            start: "2 days left",
+          },
+          logo: {
+            src: "/assets/svg/VrPartyIcon.svg",
+            alt: "VrDjIcon",
+          },
+          title:
+            "Festivals inspire us to count our blessings and help each other.",
+        },
+      ],
     },
   },
 };
