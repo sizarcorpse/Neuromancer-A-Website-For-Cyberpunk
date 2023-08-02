@@ -1,3 +1,4 @@
+import { cx } from "@/utils/cx";
 import Link from "next/link";
 import { MdEast } from "react-icons/md";
 
@@ -29,14 +30,16 @@ const NrLinkButton = ({ href, styles, children }: NrLinkButtonProps) => {
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center gap-2
+      className={cx(
+        `inline-flex items-center justify-center gap-2
       ${placement === "left" ? "flex-row-reverse" : "flex-row"} 
       ${color ? `text-${color}` : "text-nr-light"}
       ${size ? `text-${size}` : "text-sm"}
       ${size === "xs" ? "font-medium" : "font-semibold"}
-      ${css ? `${css}` : ""}
       hover:text-nr-amber
-      `}
+      `,
+        css
+      )}
     >
       <span>{children}</span>
       {icon && <MdEast className={`${size ? `text-${size}` : "text-base"}`} />}

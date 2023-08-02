@@ -1,7 +1,8 @@
 import { NrText, NrTitle } from "@/components/ui";
 import Image from "next/image";
 import { MdMoreHoriz, MdOutlineAccessTime, MdShare } from "react-icons/md";
-interface NrCardProps {
+
+type NrFestivalCardProps = {
   banner: {
     src: string;
     alt: string;
@@ -14,23 +15,7 @@ interface NrCardProps {
     alt: string;
   };
   title: string;
-  venue: string;
-}
-
-const NrCardData: NrCardProps = {
-  banner: {
-    src: "/assets/media/festival-card-1.jpg",
-    alt: "Festival",
-  },
-  time: {
-    start: "2 days left",
-  },
-  logo: {
-    src: "/assets/svg/VrDjIcon.svg",
-    alt: "VrDjIcon",
-  },
-  title: "The most awesome festival ever!",
-  venue: "Virtual",
+  venue?: string;
 };
 
 const NrShareButton = () => {
@@ -48,6 +33,7 @@ const OutlineButton = () => {
         <NrText
           styles={{
             size: "sm",
+            css: "font-regular",
           }}
         >
           Book it now
@@ -57,12 +43,12 @@ const OutlineButton = () => {
   );
 };
 
-const NrFestivalCard = () => {
-  const { banner, time, logo, title, venue } = NrCardData;
+const NrFestivalCard = ({ item }: { item: NrFestivalCardProps }) => {
+  const { banner, time, logo, title, venue } = item;
   return (
-    <div className="w-full max-w-sm rounded-lg overflow-hidden bg-nr-darker bg-opacity-40 border border-nr-dark/40">
+    <div className="w-full max-w-sm rounded-lg overflow-hidden bg-nr-darker bg-opacity-60 ">
       <Image src={banner.src} alt={banner.alt} width={768} height={360} />
-      <div className="w-full flex flex-col gap-4 p-4 backdrop-filter backdrop-blur-sm">
+      <div className="w-full flex flex-col gap-4 p-4 backdrop-filter backdrop-blur-2xl">
         <div className="inline-flex items-center justify-between gap-6">
           <div className="inline-flex items-center gap-2">
             <MdOutlineAccessTime className="text-nr-light" size="1.25em" />
@@ -82,13 +68,13 @@ const NrFestivalCard = () => {
         <div className="flex flex-row items-center gap-2">
           <Image src={logo.src} alt={logo.alt} width={60} height={60} />
           <div className="flex flex-col items-start justify-start gap-1">
-            <NrTitle component="h5">{title}</NrTitle>
             <NrText
               styles={{
                 size: "sm",
+                css: "line-clamp-3",
               }}
             >
-              @{venue}
+              {title}
             </NrText>
           </div>
         </div>

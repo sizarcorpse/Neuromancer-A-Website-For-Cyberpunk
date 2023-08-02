@@ -12,6 +12,7 @@ const dynamicComponents = {
   NrEventCard: dynamic(() => import("@/components/ui/NrEventCard")),
   NrDjCard: dynamic(() => import("@/components/ui/NrDjCard")),
   NrNewsletterCard: dynamic(() => import("@/components/ui/NrNewsletterCard")),
+  NrFestivalCard: dynamic(() => import("@/components/ui/NrFestivalCard")),
 };
 
 const NrComponentSlider: React.FC<NrImageSliderProps> = ({
