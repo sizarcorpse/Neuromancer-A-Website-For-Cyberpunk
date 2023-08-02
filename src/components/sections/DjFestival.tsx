@@ -38,7 +38,7 @@ const DjFestival: FC<DjFestivalProps> = ({ festivals }) => {
     content: { title, description, festivals: events },
   } = festivals;
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[linear-gradient(0deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_60%),linear-gradient(180deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_50%),url('/assets/media/festival-background.jpg')] bg-center bg-cover">
+    <section className="flex justify-center items-center min-h-screen bg-[linear-gradient(0deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_60%),linear-gradient(180deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_50%),url('/assets/media/festival-background.jpg')] bg-center bg-cover">
       <NrContainer
         styles={{
           size: "md",
@@ -76,7 +76,7 @@ const DjFestival: FC<DjFestivalProps> = ({ festivals }) => {
           <NrComponentSlider item={events} component="NrFestivalCard" />
         </div>
       </NrContainer>
-    </div>
+    </section>
   );
 };
 
