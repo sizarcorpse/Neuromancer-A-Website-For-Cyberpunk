@@ -5,7 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: ["text-gray", "text-nr-gray"],
+  safelist: ["text-gray", "text-nr-gray", "text-nr-amber"],
   theme: {
     extend: {
       colors: {
