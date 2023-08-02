@@ -1,11 +1,14 @@
-import { DjFeatured, DjHero, DjWhy } from "@/components/sections";
+import { DjFeatured, DjFestival, DjHero, DjWhy } from "@/components/sections";
+import { festival } from "@/mock/db";
 
 const BarPage = () => {
+  const { hero, why, dj, festivals } = festival;
   return (
     <>
-      <DjHero />
-      <DjWhy />
-      <DjFeatured />
+      <DjHero hero={hero} />
+      <DjWhy why={why} />
+      <DjFeatured dj={dj} />
+      <DjFestival festivals={festivals} />
     </>
   );
 };
