@@ -8,4 +8,5 @@ export { default as HomeHero } from "./HomeHero";
 export { default as Newsletter } from "./Newsletter";
 export { default as Reviews } from "./Reviews";
 export { default as VrGames } from "./VrGames";
+export { default as VrHero } from "./VrHero";
 export { default as VrSocialEvents } from "./VrSocialEvents";
