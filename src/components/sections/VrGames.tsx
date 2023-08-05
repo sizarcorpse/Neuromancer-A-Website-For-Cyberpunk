@@ -7,7 +7,7 @@ import {
 import { gameData } from "@/mock/data";
 const VrGames = () => {
   return (
-    <section className="bg-darker">
+    <section className="bg-nr-darker bg-[linear-gradient(0deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_60%),linear-gradient(180deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_50%),url('/assets/media/vr-game-bg-pattern.png')]">
       <NrContainer
         styles={{
           size: "md",
