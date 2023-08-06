@@ -12,7 +12,7 @@ import { NrEvent } from "@/types/event";
 
 const VrSocialEvents = () => {
   return (
-    <section className="bg-darker">
+    <section className="bg-blue-dark bg-[url('/assets/media/vr-se-bg-pattern.png'),linear-gradient(0deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_60%),linear-gradient(180deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_50%)]">
       <NrContainer
         styles={{
           css: "flex flex-col gap-20 px-xl items-center",
