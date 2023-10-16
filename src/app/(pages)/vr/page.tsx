@@ -1,11 +1,11 @@
-import { DjHero, VrGames, VrSocialEvents } from "@/components/sections";
+import { VrGames, VrHero, VrSocialEvents } from "@/components/sections";
 import { festival } from "@/mock/db";
 
 const BarPage = () => {
   const { hero } = festival;
   return (
     <>
-      <DjHero hero={hero} />
+      <VrHero hero={hero} />
       <VrGames />
       <VrSocialEvents />
     </>
