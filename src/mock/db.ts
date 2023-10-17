@@ -1169,3 +1169,405 @@ export const festival = {
     },
   },
 };
+
+export const vr = {
+  hero: {
+    images: {
+      background: "/assets/media/vr-hero-background.jpg",
+    },
+    content: {
+      title: "This weekend's biggest celebration is here!",
+      description:
+        "The best approach to launch your week into the heavens is to escape from the monotonous weekly routine and join the cosmic celebration.",
+      primaryAction: {
+        type: "button",
+        label: "Cosmic Circus",
+        href: "/explore",
+      },
+      secondaryAction: {
+        type: "link",
+        label: "Explore Events",
+        href: "/explore",
+      },
+    },
+  },
+  game: {
+    images: {},
+    content: {
+      title: "Games for all ages",
+      description:
+        "With the help of our extensive selection of VR games, explore new realms! With friends and family, explore limitless possibilities by jumping, running, and flying during an unforgettable immersive experience.",
+      games: [
+        {
+          uuid: "1",
+          preset: "game",
+          galleries: [
+            {
+              src: "/assets/media/slider-image-6.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-4.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-11.jpg",
+              alt: "VR Cinema 9D",
+            },
+          ],
+          icon: "/assets/svg/Vr9DCinemaIcon.svg",
+          title: "Mission Sigma 🔥",
+          status: "Escape Room",
+          description:
+            "The entire building has been turned into a tower filled with intricate traps and obstacles. You have been recommended as a specialist in such puzzles, and the secret service has helped you infiltrate the courtyard. The rest is up to you. Get past all the traps and shut down the nuclear...",
+          action: {
+            type: "button",
+            label: "Book To Play",
+            href: "/vr-free-play",
+          },
+          share: {
+            enabled: false,
+          },
+        },
+        {
+          uuid: "2",
+          preset: "game",
+          galleries: [
+            {
+              src: "/assets/media/slider-image-14.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-9.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-8.jpg",
+              alt: "VR Cinema 9D",
+            },
+          ],
+          icon: "/assets/svg/VrFreeRoamIcon.svg",
+          title: "Arizona Sunshine",
+          status: "Free Play",
+          description:
+            "Putting the undead back to rest is more thrilling than ever before - battle alongside 3 fellow survivors in the midst of a zombie apocalypse. Survive solo or in co-op, handle weapons with real-life movements, and explore a post-apocalyptic world in VR",
+          action: {
+            type: "button",
+            label: "Book To Play",
+            href: "/vr-free-play",
+          },
+          share: {
+            enabled: false,
+          },
+        },
+        {
+          uuid: "3",
+          preset: "game",
+          galleries: [
+            {
+              src: "/assets/media/slider-image-12.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-13.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-11.jpg",
+              alt: "VR Cinema 9D",
+            },
+          ],
+          icon: "/assets/svg/VrEscapeRoomIcon.svg",
+          title: "Quantum Arena",
+          status: "Free Roam",
+          description:
+            "Challenge your friends in an intense futuristic tournament! Team-up or fight in a free-for-all battle for the highest score. Beware as players are not the only danger to look out for!",
+          action: {
+            type: "button",
+            label: "Book To Play",
+            href: "/vr-free-play",
+          },
+          share: {
+            enabled: false,
+          },
+        },
+        {
+          uuid: "4",
+          preset: "game",
+          galleries: [
+            {
+              src: "/assets/media/slider-image-7.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-8.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-9.jpg",
+              alt: "VR Cinema 9D",
+            },
+          ],
+          icon: "/assets/svg/VrFreePlayIcon.svg",
+          title: "Jungle Quest ⚡",
+          status: "Escape Room",
+          description:
+            "During a walk in the park, you found a portal that leads to the mysterious world. An amazing sanctuary populated by animals appears in front of you. But how do you get back? \n To find the way home, you have to solve a series of puzzles and explore.",
+          action: {
+            type: "button",
+            label: "Book To Play",
+            href: "/vr-free-play",
+          },
+          share: {
+            enabled: false,
+          },
+        },
+        {
+          uuid: "5",
+          preset: "game",
+          galleries: [
+            {
+              src: "/assets/media/slider-image-9.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-4.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-6.jpg",
+              alt: "VR Cinema 9D",
+            },
+          ],
+          icon: "/assets/svg/VrPartyIcon.svg",
+          title: "Dynamite 🌠",
+          status: "",
+          description:
+            "Christmas is under threat! Santa has got caught in a blizzard, he has lost all the presents and cannot find his way home. \n Only you can save Christmas.",
+          action: {
+            type: "button",
+            label: "Book To Play",
+            href: "/vr-free-play",
+          },
+          share: {
+            enabled: false,
+          },
+        },
+        {
+          uuid: "6",
+          preset: "game",
+          galleries: [
+            {
+              src: "/assets/media/slider-image-12.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-10.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-8.jpg",
+              alt: "VR Cinema 9D",
+            },
+          ],
+          icon: "/assets/svg/VrDjIcon.svg",
+          title: "Chernobylite 💣",
+          status: "",
+          description:
+            "Chernobylite is a survival horror RPG set in a sci-fi open world. Uncover the disturbing secrets of Chernobyl in a 3D-scanned recreation of the real Exclusion Zone. \n It’s not about how you face your fears, but how you survive them.",
+          action: {
+            type: "button",
+            label: "Book To Play",
+            href: "/vr-free-play",
+          },
+          share: {
+            enabled: false,
+          },
+        },
+      ],
+      primaryAction: {
+        type: "button",
+        label: "Book Now",
+        href: "/explore",
+      },
+    },
+  },
+  event: {
+    images: {},
+    content: {
+      title: "Games for all ages",
+      description:
+        "On weekends, are you looking for a fun and athletic way to unwind? Our Social Events include adrenaline-pumping VR games, DJs, karaoke, and other activities to enjoy with your friends and family.",
+      events: [
+        {
+          uuid: "1",
+          preset: "social",
+          galleries: [
+            {
+              src: "/assets/media/slider-image-8.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-9.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-10.jpg",
+              alt: "VR Cinema 9D",
+            },
+          ],
+          icon: "/assets/svg/Vr9DCinemaIcon.svg",
+          title: "Family Fun Night 🔥",
+          status: "",
+          description:
+            "Never miss family bonding time ever again. Come enjoy endless realities.",
+          features: [
+            {
+              icon: "/assets/svg/JigsawPuzzlePieceIcon.svg",
+              title: "VR Cinema 9D",
+            },
+            {
+              icon: "/assets/svg/GameDieIcon.svg",
+              title: "All Ages Welcome",
+            },
+            {
+              icon: "/assets/svg/CalendarIcon.svg",
+              title: " Every Wednesday",
+            },
+            {
+              icon: "/assets/svg/TicketIcon.svg",
+              title: "Walk-ins Allowed",
+            },
+            {
+              icon: "/assets/svg/GameDieIcon.svg",
+              title: "Games, Drinks, Party",
+            },
+          ],
+          action: {
+            type: "link",
+            label: "Learn More",
+            href: "/vr-9d-cinema",
+          },
+          share: {
+            enabled: true,
+          },
+        },
+        {
+          uuid: "2",
+          preset: "social",
+          galleries: [
+            {
+              src: "/assets/media/slider-image-11.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-12.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-13.jpg",
+              alt: "VR Cinema 9D",
+            },
+          ],
+          icon: "/assets/svg/VrFreeRoamIcon.svg",
+          title: "Disco Night 🎶",
+          status: "Coming Soon",
+          description:
+            "Have endless fun singing, drinking, playing and having a good laugh.",
+          features: [
+            {
+              icon: "/assets/svg/JigsawPuzzlePieceIcon.svg",
+              title: "Music, Games",
+            },
+            {
+              icon: "/assets/svg/GameDieIcon.svg",
+              title: "All Ages Welcome",
+            },
+            {
+              icon: "/assets/svg/CalendarIcon.svg",
+              title: "Every Thursday",
+            },
+            {
+              icon: "/assets/svg/TicketIcon.svg",
+              title: "Walk-ins Allowed",
+            },
+            {
+              icon: "/assets/svg/GameDieIcon.svg",
+              title: "Escape Room",
+            },
+            {
+              icon: "/assets/svg/CalendarIcon.svg",
+              title: "Free Roam",
+            },
+          ],
+          action: {
+            type: "link",
+            label: "Learn More",
+            href: "/vr-free-roam",
+          },
+          share: {
+            enabled: true,
+          },
+        },
+        {
+          uuid: "3",
+          preset: "social",
+          galleries: [
+            {
+              src: "/assets/media/slider-image-5.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-6.jpg",
+              alt: "VR Cinema 9D",
+            },
+            {
+              src: "/assets/media/slider-image-7.jpg",
+              alt: "VR Cinema 9D",
+            },
+          ],
+          icon: "/assets/svg/VrEscapeRoomIcon.svg",
+          title: "DJ Friday 💣",
+          status: "",
+          description:
+            "Wrap your week off in a blast with DJ Friday - the ultimate adult playground.",
+          features: [
+            {
+              icon: "/assets/svg/JigsawPuzzlePieceIcon.svg",
+              title: "DJs in Bar",
+            },
+            {
+              icon: "/assets/svg/GameDieIcon.svg",
+              title: "All Ages Welcome",
+            },
+            {
+              icon: "/assets/svg/CalendarIcon.svg",
+              title: "All Ages Welcome",
+            },
+            {
+              icon: "/assets/svg/TicketIcon.svg",
+              title: "Starts @8 PM",
+            },
+            {
+              icon: "/assets/svg/GameDieIcon.svg",
+              title: "Music, Drinks, Party",
+            },
+          ],
+          action: {
+            type: "link",
+            label: "Join Event",
+            href: "/vr-escape-room",
+          },
+          share: {
+            enabled: true,
+          },
+        },
+      ],
+      primaryAction: {
+        type: "button",
+        label: "Book Now",
+        href: "/explore",
+      },
+    },
+  },
+};

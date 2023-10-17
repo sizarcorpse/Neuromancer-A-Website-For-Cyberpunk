@@ -7,10 +7,31 @@ import {
   NrText,
   NrTitle,
 } from "@/components/ui";
-import { socialEventData } from "@/mock/data";
-import { NrEvent } from "@/types/event";
 
-const VrSocialEvents = () => {
+import { NrEvent, NrEvents } from "@/types/event";
+import { FC } from "react";
+
+interface Event {
+  event: {
+    images: {};
+    content: {
+      title: string;
+      description: string;
+      events: NrEvents;
+      primaryAction: {
+        type: string;
+        label: string;
+        href: string;
+      };
+    };
+  };
+}
+
+const VrSocialEvents: FC<Event> = ({ event }) => {
+  const {
+    content: { title, description, events, primaryAction },
+  } = event;
+
   return (
     <section className="bg-blue-dark bg-[url('/assets/media/vr-se-bg-pattern.png'),linear-gradient(0deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_60%),linear-gradient(180deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_50%)]">
       <NrContainer
@@ -25,20 +46,18 @@ const VrSocialEvents = () => {
               align: "center",
             }}
           >
-            Upcoming Events
+            {title}
           </NrTitle>
           <NrText
             styles={{
               align: "center",
             }}
           >
-            Looking for a fun and active way to unwind on the weekends? Our
-            Social Events feature heart-pumping VR games, DJs, karaoke, and more
-            to enjoy with your friends and family.
+            {description}
           </NrText>
         </div>
         <div className="hidden m-auto xl:flex flex-col flex-wrap justify-center items-stretch gap-4 md:flex-row">
-          {socialEventData.map((item, index) => (
+          {events.map((item, index) => (
             <div
               key={index}
               className={`grow-0 shrink justify-start md:basis-column-3-gap-4 lg:basis-column-3-gap-4`}
@@ -48,15 +67,20 @@ const VrSocialEvents = () => {
           ))}
         </div>
         <div className="w-full sm:w-auto xl:hidden">
-          <NrComponentCarousel item={socialEventData} component="NrEventCard" />
+          <NrComponentCarousel
+            item={events as NrEvents}
+            component="NrEventCard"
+          />
         </div>
-        <NrButton
-          styles={{
-            icon: true,
-          }}
-        >
-          Reserve A Seat
-        </NrButton>
+        {primaryAction && (
+          <NrButton
+            styles={{
+              icon: true,
+            }}
+          >
+            {primaryAction.label}
+          </NrButton>
+        )}
       </NrContainer>
     </section>
   );

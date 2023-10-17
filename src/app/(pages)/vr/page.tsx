@@ -1,13 +1,13 @@
 import { VrGames, VrHero, VrSocialEvents } from "@/components/sections";
-import { festival } from "@/mock/db";
+import { vr } from "@/mock/db";
 
 const BarPage = () => {
-  const { hero } = festival;
+  const { hero, game, event } = vr;
   return (
     <>
       <VrHero hero={hero} />
-      <VrGames />
-      <VrSocialEvents />
+      <VrGames game={game as any} />
+      <VrSocialEvents event={event as any} />
     </>
   );
 };

@@ -4,8 +4,28 @@ import {
   NrText,
   NrTitle,
 } from "@/components/ui";
-import { gameData } from "@/mock/data";
-const VrGames = () => {
+import { NrEvent, NrEvents } from "@/types/event";
+import { FC } from "react";
+interface Game {
+  game: {
+    images: {};
+    content: {
+      title: string;
+      description: string;
+      games: NrEvents;
+      primaryAction: {
+        type: string;
+        label: string;
+        href: string;
+      };
+    };
+  };
+}
+
+const VrGames: FC<Game> = ({ game }) => {
+  const {
+    content: { title, description, games },
+  } = game;
   return (
     <section className="bg-nr-darker bg-[linear-gradient(0deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_60%),linear-gradient(180deg,rgba(9,9,11,1)_5%,rgba(9,9,121,0)_50%),url('/assets/media/vr-game-bg-pattern.png')]">
       <NrContainer
@@ -21,19 +41,17 @@ const VrGames = () => {
               align: "center",
             }}
           >
-            Games for Everyone
+            {title}
           </NrTitle>
           <NrText
             styles={{
               align: "center",
             }}
           >
-            Travel to new dimensions with our large catalog of VR games! Jump,
-            run, fly, and explore endless possibilities with friends and family
-            in an immersive experience you wont forget.
+            {description}
           </NrText>
         </div>
-        <NrComponentCarousel item={gameData} component="NrEventCard" />
+        <NrComponentCarousel item={games} component="NrEventCard" />
       </NrContainer>
     </section>
   );

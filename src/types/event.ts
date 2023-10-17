@@ -7,7 +7,15 @@ export type NrEvent = {
   }[];
   icon: string;
   title: string;
-  status?: "Coming Soon" | "Live" | "Ended" | "Cancelled";
+  status?:
+    | "Coming Soon"
+    | "Live"
+    | "Ended"
+    | "Cancelled"
+    | "Escape Room"
+    | "Free Play"
+    | "Free Roam"
+    | "";
   description: string;
   features?: {
     icon: string;
